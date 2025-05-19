@@ -1,35 +1,42 @@
-.form {
-  display: flex;
+/* components/SearchBar.module.scss */
+
+.searchForm {
   width: 100%;
-  max-width: 400px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border-radius: 999px;
-  padding: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 500px;   /* adjust as you like */
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  border: 2px solid  #524873;   
+  border-radius: 999px;    
+  padding: 0.5rem 1rem;
+  background: transparent;
+  backdrop-filter: blur(8px);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+  color: #524873;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
 }
 
 .input {
-  flex-grow: 1;
-  background: transparent;
+  flex: 1;
   border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  color: #34346b;
   outline: none;
+  font-size: 1rem;
+  background: transparent;
+  color: #524873;
 }
 
-.button {
-    background: #5454ad; 
-    color: #fff;
-    border: none;
-  border-radius: 999px;
-  padding: 0 1.25rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
+.input::placeholder {
+  color: #524873;
 }
 
-.button:hover {
-    background: #34346b; 
-}
+
+// #34346b; #5454ad;

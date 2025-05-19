@@ -12,17 +12,18 @@ export default function Home() {
     <div className={styles.pageWrapper}>
       <div className={styles.glassCard}>
         {/* Left pane */}
-        <div className={styles.left}>
+        {/* <div className={styles.left}> */}
           <h1 className={styles.siteTitle}>The Film Fanatic</h1>
           <SearchBar />
-        </div>
+        {/* </div> */}
 
         {/* Right pane */}
-        <div className={styles.right}>
+        <div className={styles.films}>
           {results.length === 0 ? (
-            <p className={styles.noResults}>
-              Try searching for a movie…
-            </p>
+            // <p className={styles.noResults}>
+            //   Try searching for a movie…
+            // </p>
+            <></>
           ) : (
             results.map((movie) => (
               <div key={movie.id} className={styles.movieCard}>
