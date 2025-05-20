@@ -4,7 +4,7 @@ import { FormEvent, useState } from 'react';
 import { useSearchStore } from '@/stores/useSearchStore';
 import styles from '../styles/SearchBar.module.scss';
 
-export default function SearchBar() {
+export default function SearchBar({ small = false }: { small?: boolean }) {
   const [input, setInput] = useState('');
   const setQuery = useSearchStore((s) => s.setQuery);
   const fetchResults = useSearchStore((s) => s.fetchResults);
@@ -17,7 +17,7 @@ export default function SearchBar() {
   };
 
   return (
-    <form onSubmit={onSubmit} className={styles.searchForm}>
+    <form onSubmit={onSubmit} className={`${styles.searchForm} ${small ? styles.small : ''}`}>
       <div className={styles.inputGroup}>
         <svg
           className={styles.icon}

@@ -13,7 +13,7 @@ export default function Home() {
       <div className={styles.glassCard}>
         {/* Left pane */}
         {/* <div className={styles.left}> */}
-          <h1 className={styles.siteTitle}>The Film Fanatic</h1>
+          <h1 className={styles.siteTitle}>Find your favourite films</h1>
           <SearchBar />
         {/* </div> */}
 

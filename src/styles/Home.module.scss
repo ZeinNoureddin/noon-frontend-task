@@ -12,14 +12,10 @@
   /* full-screen pastel gradient background */
   min-height: 100vh;
   padding: 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--gradient-start),
-    var(--gradient-end)
-  );
+
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   color: #34346b; 
 }
 
@@ -32,11 +28,11 @@
   width: 90%;
   max-width: 1200px;
   min-height: 80vh;
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border-radius: 1rem;
-  box-shadow: 0 8px 32px var(--glass-shadow);
-  overflow: hidden;
+  // background: var(--glass-bg);
+  // backdrop-filter: blur(20px);
+  // border-radius: 1rem;
+  // box-shadow: 0 8px 32px var(--glass-shadow);
+  // overflow: hidden;
 }
 
 .left {
@@ -51,6 +47,7 @@
 .siteTitle {
   font-size: 2.5rem;
   font-weight: 700;
+  // margin-top: 1rem;
   // color: #34346b;
   margin-bottom: 2rem;
   text-align: center;

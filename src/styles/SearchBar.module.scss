@@ -5,6 +5,17 @@
   max-width: 500px;   /* adjust as you like */
 }
 
+.searchForm.small {
+  max-width: 300px;   /* shrink it for the navbar */
+  .input {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  .inputGroup {
+    padding: 0.25rem 0.75rem;
+  }
+}
+
 .inputGroup {
   display: flex;
   align-items: center;

@@ -1,0 +1,50 @@
+/* src/styles/Navbar.module.scss */
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+
+  /* give it the same vertical padding you had before */
+//   padding: 0.75rem 0; 
+  padding: 1.5rem 0 0.75rem 0;  
+  background: transparent;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%; 
+}
+
+
+/* Left */
+.brand a {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #34346b; 
+  text-decoration: none;
+}
+
+/* Center */
+.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Right */
+.links a {
+  margin-left: 1.5rem;
+  color: #34346b; 
+  text-decoration: none;
+  font-weight: 500;
+}
+.links a:hover {
+  color: #5454ad;
+}
