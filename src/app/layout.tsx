@@ -18,14 +18,15 @@ export const metadata: Metadata = {
   description: 'Search and favorite your films',
 };
 
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <Navbar />
         <main className="mainContent">{children}</main>
       </body>

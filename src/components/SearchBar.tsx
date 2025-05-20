@@ -1,19 +1,23 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useSearchStore } from '@/stores/useSearchStore';
 import styles from '../styles/SearchBar.module.scss';
 
 export default function SearchBar({ small = false }: { small?: boolean }) {
+  const router = useRouter();
+
   const [input, setInput] = useState('');
-  const setQuery = useSearchStore((s) => s.setQuery);
-  const fetchResults = useSearchStore((s) => s.fetchResults);
+  // const setQuery = useSearchStore((s) => s.setQuery);
+  // const fetchResults = useSearchStore((s) => s.fetchResults);
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
-    setQuery(input);
-    fetchResults();
+    // setQuery(input);
+    // fetchResults();
+    router.push(`/search?query=${encodeURIComponent(input)}`);
   };
 
   return (

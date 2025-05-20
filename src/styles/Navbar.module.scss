@@ -7,7 +7,12 @@
 
   /* give it the same vertical padding you had before */
 //   padding: 0.75rem 0; 
-  padding: 1.5rem 0 0.75rem 0;  
+//   background: var(--glass-bg);
+//   background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(30px);
+    // background: #fecba4; 
+  
+  padding: 1.2rem 0 1.2rem 0;  
   background: transparent;
 }
 

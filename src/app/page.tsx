@@ -17,48 +17,6 @@ export default function Home() {
           <SearchBar />
         {/* </div> */}
 
-        {/* Right pane */}
-        <div className={styles.films}>
-          {results.length === 0 ? (
-            // <p className={styles.noResults}>
-            //   Try searching for a movie…
-            // </p>
-            <></>
-          ) : (
-            results.map((movie) => (
-              <div key={movie.id} className={styles.movieCard}>
-                <div className={styles.posterWrapper}>
-                  {movie.poster_path ? (
-                    <Image
-                      src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-                      alt={movie.title}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  ) : (
-                    <div
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#888',
-                      }}
-                    >
-                      No Image
-                    </div>
-                  )}
-                </div>
-                <h2>{movie.title}</h2>
-                <p>
-                  {new Date(movie.release_date).getFullYear()} · ⭐️{' '}
-                  {movie.vote_average.toFixed(1)}
-                </p>
-              </div>
-            ))
-          )}
-        </div>
       </div>
     </div>
   );
