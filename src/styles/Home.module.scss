@@ -26,7 +26,7 @@
   align-items: center;
   width: 90%;
   max-width: 1200px;
-  min-height: 80vh;
+  min-height: 70vh;
 }
 
 .left {
@@ -78,6 +78,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  cursor: pointer;
 
   .posterWrapper {
     position: relative;
@@ -100,3 +101,33 @@
     // color: #34346b; 
   }
 }
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.favBtn {
+  // position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+// .favBtn, .button {
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 0.25rem;
+//   background: transparent;
+//   border: none;
+//   cursor: pointer;
+//   /* …other glass styles… */
+// }
+
+// .favBtn svg,
+// .button svg {
+//   flex-shrink: 0;
+// }

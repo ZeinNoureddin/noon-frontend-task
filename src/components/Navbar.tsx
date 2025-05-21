@@ -24,7 +24,7 @@ export default function Navbar() {
         {/* 3) Links on the right */}
         <div className={styles.links}>
           <Link href="/">Home</Link>
-          <Link href="/favorites">Favorites</Link>
+          <Link href="/favourites">Favourites</Link>
         </div>
 
       </div>
