@@ -25,6 +25,7 @@ type MovieDetails = {
 };
 
 async function fetchMovieDetails(id: string): Promise<MovieDetails> {
+  await new Promise((res) => setTimeout(res, 2000));
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${id}` +
       `?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}` +
@@ -97,16 +98,16 @@ export default async function MoviePage({
           </div>
         </div>
         <div className={styles.right}>
-                  {/* favorite toggle */}
-        <FavoriteButton
-          movie={{
-            id: movie.id,
-            title: movie.title,
-            poster_path: movie.poster_path,
-            release_date: movie.release_date,
-            vote_average: movie.vote_average,
-          }}
-        />
+          {/* favorite toggle */}
+          <FavoriteButton
+            movie={{
+              id: movie.id,
+              title: movie.title,
+              poster_path: movie.poster_path,
+              release_date: movie.release_date,
+              vote_average: movie.vote_average,
+            }}
+          />
           <h2>Cast</h2>
           <div className={styles.castGrid}>
             {movie.credits.cast.slice(0, 12).map((c) => (
@@ -132,8 +133,3 @@ export default async function MoviePage({
     </div>
   );
 }
-// export default function MoviePage({ params } : { params: { id: string } }) {
-//     return (
-//         <p>ID: {params.id}</p>
-//     );
-// }
