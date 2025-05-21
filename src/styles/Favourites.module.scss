@@ -7,35 +7,6 @@
   --glass-shadow: rgba(0, 0, 0, 0.1);
 }
 
-.pageWrapper {
-  /* full‐screen pastel gradient background */
-  min-height: 100vh;
-  padding: 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--gradient-start),
-    var(--gradient-end)
-  );
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  color: #34346b;
-}
-
-.glassCard {
-  /* same glass card style */
-  width: 90%;
-  max-width: 1200px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border-radius: 1rem;
-  box-shadow: 0 8px 32px var(--glass-shadow);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
 .siteTitle {
   font-size: 2rem;
   font-weight: 700;
@@ -93,4 +64,13 @@
   color: #34346b;
   cursor: pointer;
   font-weight: bold;
+}
+
+.films {
+  width: 65%;
+  padding: 2rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  overflow-y: auto;
 }

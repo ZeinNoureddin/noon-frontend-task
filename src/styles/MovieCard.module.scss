@@ -1,0 +1,80 @@
+.movieCard {
+  width: 10.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.posterWrapper {
+  position: relative;
+  width: 100%;
+  height: 16rem; // 9.5 * 1.5 (2:3 aspect)
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  background: #f0f0f0;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  max-width: 100%;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; // Show up to 3 lines
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.25rem; // Adjust based on your font
+  height: calc(1.25rem * 2); // 3 lines of height
+}
+
+.meta {
+  font-size: 0.875rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.heartIcon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background-color 0.2s ease;
+}
+
+.heartIcon svg {
+  stroke: #e25555;
+  fill: none;
+}
+
+.heartIcon:hover {
+  background-color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}

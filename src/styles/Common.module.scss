@@ -1,0 +1,28 @@
+.pageWrapper {
+  min-height: 100vh;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  color: #34346b;
+}
+
+.glassCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  min-height: 70vh;
+}
+
+.films {
+  width: 85%;
+  padding: 2rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2.5rem;
+  overflow-y: auto;
+}

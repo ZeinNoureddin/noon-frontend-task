@@ -1,32 +1,16 @@
-/* styles/Home.module.scss */
+.siteTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
 
 :root {
   /* pastel gradient stops from your mockup */
   --gradient-start: #f6e3d8;
-  --gradient-end:   #e4d9f2;
-  --glass-bg:       rgba(255, 255, 255, 0.3);
-  --glass-shadow:   rgba(0, 0, 0, 0.1);
-}
-
-.pageWrapper {
-  /* full-screen pastel gradient background */
-  min-height: 100vh;
-  padding: 2rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  color: #34346b; 
-}
-
-.glassCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  max-width: 1200px;
-  min-height: 70vh;
+  --gradient-end: #e4d9f2;
+  --glass-bg: rgba(255, 255, 255, 0.3);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
 }
 
 .left {
@@ -37,97 +21,3 @@
   align-items: center;
   padding: 3rem;
 }
-
-.siteTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  // margin-top: 1rem;
-  // color: #34346b;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.results {
-  margin-top: 2rem;
-  font-size: 1.8rem;
-  width: 65%;           /* same width as the grid container */
-  padding-left: 3rem;
-}
-
-.films {
-  width: 65%;
-  padding: 2rem 3rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1.5rem;
-  overflow-y: auto;
-}
-
-/* “Try searching” placeholder text */
-.noResults {
-  grid-column: 1 / -1;
-  text-align: center;
-  font-style: italic;
-  // color: #34346b  
-  // color: pink; 
-}
-
-/* individual poster card */
-.movieCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-
-  .posterWrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 150%; /* 2:3 aspect ratio */
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    background: #f0f0f0;
-  }
-
-  h2 {
-    margin: 0.5rem 0 0.25rem;
-    font-size: 1rem;
-    // color: #34346b;
-  }
-
-  p {
-    font-size: 0.875rem;
-    // color: #34346b; 
-  }
-}
-
-.cardLink {
-  text-decoration: none;
-  color: inherit;
-}
-
-.favBtn {
-  // position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  background: transparent;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-// .favBtn, .button {
-//   display: inline-flex;
-//   align-items: center;
-//   gap: 0.25rem;
-//   background: transparent;
-//   border: none;
-//   cursor: pointer;
-//   /* …other glass styles… */
-// }
-
-// .favBtn svg,
-// .button svg {
-//   flex-shrink: 0;
-// }
