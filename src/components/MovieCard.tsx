@@ -73,8 +73,6 @@ export default function MovieCard({
             <Heart
               size={16}
               strokeWidth={2}
-              // fill={isFav ? "#e25555" : "none"}
-              // fill="black"
               style={{ fill: isFav ? "#e25555" : "none" }}
               color={isFav ? "#e25555" : "#34346b"}
             />

@@ -1,8 +1,9 @@
 // src/components/FavoriteButton.tsx
-'use client';
+"use client";
 
-import { MovieSummary, useFavoritesStore } from '@/stores/useFavoritesStore';
-import styles from '../styles/FavouriteButton.module.scss';
+import { MovieSummary, useFavoritesStore } from "@/stores/useFavoritesStore";
+import styles from "../styles/FavouriteButton.module.scss";
+import { Heart } from "lucide-react";
 
 export function FavoriteButton({ movie }: { movie: MovieSummary }) {
   const favs = useFavoritesStore((s) => s.favorites);
@@ -13,8 +14,21 @@ export function FavoriteButton({ movie }: { movie: MovieSummary }) {
   const toggle = () => (isFav ? remove(movie.id) : add(movie));
 
   return (
-    <button onClick={toggle} className={styles.button}>
-      {isFav ? '❤️ Remove from favorites' : '🤍 Add to favorites'}
+    <button
+      className={styles.button}
+      onClick={toggle}
+      aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
+      type="button"
+    >
+      <Heart
+        size={20}
+        strokeWidth={2}
+        style={{ fill: isFav ? "#e25555" : "none" }}
+        color={isFav ? "#e25555" : "#34346b"}
+      />
+      <span style={{ marginLeft: 8 }}>
+        {isFav ? "Remove from favorites" : "Add to favorites"}
+      </span>
     </button>
   );
 }
