@@ -11,7 +11,17 @@ export function FavoriteButton({ movie }: { movie: MovieSummary }) {
   const remove = useFavoritesStore((s) => s.removeFavorite);
   const isFav = favs.some((f) => f.id === movie.id);
 
-  const toggle = () => (isFav ? remove(movie.id) : add(movie));
+  const toggle = () => {
+    try {
+      isFav ? remove(movie.id) : add(movie);
+    } catch (error) {
+      console.error(
+        `Failed to update favorites for movie "${movie.title}":`,
+        error
+      );
+      alert("An error occurred while updating favorites. Please try again.");
+    }
+  };
 
   return (
     <button

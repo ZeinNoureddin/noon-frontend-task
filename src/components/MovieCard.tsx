@@ -35,14 +35,19 @@ export default function MovieCard({
   const removeFav = useFavoritesStore((s) => s.removeFavorite);
 
   const toggleFavorite = () => {
-    const movie: MovieSummary = {
-      id,
-      title,
-      poster_path,
-      release_date,
-      vote_average,
-    };
-    isFav ? removeFav(id) : addFav(movie);
+    try {
+      const movie: MovieSummary = {
+        id,
+        title,
+        poster_path,
+        release_date,
+        vote_average,
+      };
+      isFav ? removeFav(id) : addFav(movie);
+    } catch (error) {
+      console.error(`Failed to update favorites for movie "${title}":`, error);
+      alert("An error occurred while updating favorites. Please try again.");
+    }
   };
   console.log(`${title} isFav:`, isFav);
 
