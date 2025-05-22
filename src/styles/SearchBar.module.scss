@@ -2,11 +2,11 @@
 
 .searchForm {
   width: 100%;
-  max-width: 500px;   /* adjust as you like */
+  max-width: 500px; /* adjust as you like */
 }
 
 .searchForm.small {
-  max-width: 300px;   /* shrink it for the navbar */
+  max-width: 300px; /* shrink it for the navbar */
   .input {
     padding: 0.25rem 0.75rem;
     font-size: 0.9rem;
@@ -19,8 +19,8 @@
 .inputGroup {
   display: flex;
   align-items: center;
-  border: 2px solid  #524873;   
-  border-radius: 999px;    
+  border: 2px solid #524873;
+  border-radius: 999px;
   padding: 0.5rem 1rem;
   background: transparent;
   backdrop-filter: blur(8px);
@@ -49,5 +49,9 @@
   color: #524873;
 }
 
+// .SearchBar-module-scss-module__cjr1rW__button:focus {
+//     outline: 2px solid #0070f3; /* Add a visible focus outline */
+//     outline-offset: 2px;
+// }
 
 // #34346b; #5454ad;

@@ -61,7 +61,7 @@ export default function MovieCard({
           {poster_path ? (
             <Image
               src={`https://image.tmdb.org/t/p/w342${poster_path}`}
-              alt={title}
+              alt={`Poster of the movie ${title}`}
               fill
               style={{ objectFit: "cover" }}
             />
@@ -80,6 +80,7 @@ export default function MovieCard({
               strokeWidth={2}
               style={{ fill: isFav ? "#e25555" : "none" }}
               color={isFav ? "#e25555" : "#34346b"}
+              aria-hidden="true"
             />
           </div>
         </div>

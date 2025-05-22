@@ -29,12 +29,19 @@ export function FavoriteButton({ movie }: { movie: MovieSummary }) {
       onClick={toggle}
       aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
       type="button"
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          toggle();
+          e.preventDefault();
+        }
+      }}
     >
       <Heart
         size={20}
         strokeWidth={2}
         style={{ fill: isFav ? "#e25555" : "none" }}
         color={isFav ? "#e25555" : "#34346b"}
+        aria-hidden="true"
       />
       <span style={{ marginLeft: 8 }}>
         {isFav ? "Remove from favorites" : "Add to favorites"}

@@ -1,18 +1,19 @@
 // src/components/Navbar.tsx
-'use client';
+"use client";
 
-import Link from 'next/link';
-import SearchBar from './SearchBar';  // your existing SearchBar, will be smaller here
-import styles from '../styles/Navbar.module.scss';
+import Link from "next/link";
+import SearchBar from "./SearchBar"; // your existing SearchBar, will be smaller here
+import styles from "../styles/Navbar.module.scss";
 
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
-
         {/* 1) Brand on the left */}
         <div className={styles.brand}>
-          <Link href="/">The Film Fanatic</Link>
+          <Link href="/" aria-label="Go to homepage">
+            The Film Fanatic
+          </Link>
         </div>
 
         {/* 2) Search in the center */}
@@ -26,7 +27,6 @@ export default function Navbar() {
           <Link href="/">Home</Link>
           <Link href="/favourites">Favourites</Link>
         </div>
-
       </div>
     </nav>
   );

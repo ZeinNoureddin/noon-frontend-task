@@ -11,14 +11,11 @@ export default function Home() {
   const results = useSearchStore((s) => s.results);
 
   return (
-    <div className={styles.pageWrapper}>
+    <main className={styles.pageWrapper}>
       <div className={styles.glassCard}>
-        {/* Left pane */}
-        {/* <div className={styles.left}> */}
         <h1 className={styles.siteTitle}>Find your favourite films</h1>
         <SearchBar />
-        {/* </div> */}
       </div>
-    </div>
+    </main>
   );
 }
