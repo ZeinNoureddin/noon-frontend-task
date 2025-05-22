@@ -1,21 +1,17 @@
 // app/favorites/page.tsx
 "use client";
 
-// import favouriteStyles from "@/styles/Favourites.module.scss";
 import commonStyles from "@/styles/Common.module.scss";
 import { useFavoritesStore } from "@/stores/useFavoritesStore";
-import MovieCard from "@/components/MovieCard";
-import Link from "next/link";
-import Image from "next/image";
+import { lazy, Suspense } from "react";
+
+// Lazy load the MovieCard component
+const MovieCard = lazy(() => import("@/components/MovieCard"));
 
 export default function FavoritesPage() {
   const favs = useFavoritesStore((s) => s.favorites);
-  const remove = useFavoritesStore((s) => s.removeFavorite);
 
-  let styles = {
-    ...commonStyles,
-    // , ...favouriteStyles
-  };
+  const styles = { ...commonStyles };
 
   return (
     <div className={styles.pageWrapper}>
@@ -27,10 +23,15 @@ export default function FavoritesPage() {
           </p>
         ) : (
           <div className={styles.films}>
-            {favs.length === 0 ? (
-              <p className={styles.noResults}>No films found.</p>
-            ) : (
-              favs.map((m) => (
+            <Suspense
+              fallback={
+                <div className={styles.loadingContainer}>
+                  <div className={styles.spinner} />
+                  <span>Loading favorites...</span>
+                </div>
+              }
+            >
+              {favs.map((m) => (
                 <MovieCard
                   key={m.id}
                   id={m.id}
@@ -39,12 +40,11 @@ export default function FavoritesPage() {
                   release_date={m.release_date}
                   vote_average={m.vote_average}
                 />
-              ))
-            )}
+              ))}
+            </Suspense>
           </div>
         )}
       </div>
     </div>
   );
 }
-//               className={styles.favButton}
