@@ -87,8 +87,12 @@
     margin-top: 1rem;
   }
   .castCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     .castName {
+      margin-top: 0.2rem;
       font-weight: bold;
       font-size: 0.9rem;
     }
@@ -101,6 +105,11 @@
     width: 100px;
     height: 150px;
     background: #eee;
-    border-radius: 0.5rem;
+    border-radius: 0.09rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #685c91;
   }
 }
