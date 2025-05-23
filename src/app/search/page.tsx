@@ -33,7 +33,7 @@ export default function SearchResultsPage() {
           <p className={styles.noResults}>No films found.</p>
         ) : (
           <>
-            <h1 className={styles.results}>Results for “{query}”</h1>
+          <h1 className={styles.pageHeader}>Results for “{query}”</h1>
             <div className={styles.films}>
               {results.map((m) => (
                 <MovieCard

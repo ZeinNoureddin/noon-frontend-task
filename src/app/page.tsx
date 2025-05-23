@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className={styles.pageWrapper}>
       <section aria-labelledby="home-heading" className={styles.glassCard}>
-        <h1 className={styles.siteTitle}>Find your favourite films</h1>
+        <h1 className={styles.homeHeader}>Find your favourite films</h1>
         <SearchBar />
       </section>
     </main>

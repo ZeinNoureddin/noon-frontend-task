@@ -16,7 +16,7 @@ export default function FavoritesPage() {
   return (
     <main className={styles.pageWrapper}>
       <div className={styles.glassCard}>
-        <h1 className={styles.siteTitle}>Your Favorites</h1>
+        <h1 className={styles.pageHeader}>Your Favourites</h1>
         {favs.length === 0 ? (
           <p className={styles.noResults}>
             You haven’t added any favorites yet.
