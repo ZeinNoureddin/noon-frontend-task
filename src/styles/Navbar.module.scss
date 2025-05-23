@@ -1,5 +1,3 @@
-/* src/styles/Navbar.module.scss */
-
 .navbar {
   position: fixed;
   top: 0;
@@ -7,7 +5,6 @@
   right: 0;
   z-index: 100;
 
-  /* give it the same vertical padding you had before */
   //   padding: 0.75rem 0;
   //   background: var(--glass-bg);
   //   background: rgba(255, 255, 255, 0.6);
@@ -16,6 +13,7 @@
   // mix-blend-mode: difference;
 
   padding: 1.2rem 0 1.2rem 0;
+  height: auto;
   background: transparent;
 }
 
@@ -23,11 +21,11 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  gap: 1rem;
 }
 
 /* Left */
@@ -35,6 +33,11 @@
   font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+.brand {
+  /* optional: ensure the logo never sits flush to the next flex item */
+  margin-right: 1rem;
 }
 
 /* Center */
@@ -53,4 +56,70 @@
 }
 .links a:hover {
   color: #5454ad;
+}
+
+.searchDesktop {
+  margin-left: 1rem;
+}
+
+.mobileIcons {
+  display: none;
+  gap: 1rem;
+}
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.mobileMenu,
+.mobileSearch {
+  display: none;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  gap: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .links,
+  .searchDesktop {
+    display: none;
+  }
+
+  .mobileIcons {
+    display: flex;
+  }
+
+  .mobileSearch {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .brand a {
+    font-size: 1.5rem; /* even smaller on phones */
+  }
+}
+
+@media (max-width: 1024px) {
+  // .searchDesktop {
+  //   /* hide search on tablets & phones */
+  //   display: none;
+  // }
+  // .mobileSearch {
+  //   display: flex;
+  // }
+  .brand a {
+    font-size: 1.5rem;
+  }
 }
