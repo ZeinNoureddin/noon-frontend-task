@@ -4,7 +4,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/MovieCard.module.scss";
-import StarFill from "@/components/StarFill";
 import { Star, Heart } from "lucide-react";
 import { useFavoritesStore, MovieSummary } from "@/stores/useFavoritesStore";
 
@@ -57,7 +56,8 @@ export default function MovieCard({
   return (
     <Link href={`/movie/${id}`} className={styles.cardLink}>
       <div className={styles.movieCard}>
-        <div className={styles.posterWrapper}>
+        {/* <div className={styles.posterWrapper}> */}
+        <div className={`${styles.posterWrapper} ${styles.wrapper}`}>
           {poster_path ? (
             <Image
               src={`https://image.tmdb.org/t/p/w342${poster_path}`}
