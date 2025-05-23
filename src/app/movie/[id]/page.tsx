@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import styles from "@/styles/MovieDetails.module.scss";
 import { FavoriteButton } from "@/components/FavouriteButton";
+import { Star } from "lucide-react";
 
 type MovieDetails = {
   id: number;
@@ -41,9 +42,6 @@ export default async function MoviePage({
 }: {
   params: { id: string };
 }) {
-  // **no `await`** here—just grab the string
-  //   const id = params.id;
-
   let movie: MovieDetails;
   console.log("Fetching movie details for ID:", id);
   try {
@@ -57,6 +55,15 @@ export default async function MoviePage({
 
     return notFound();
   }
+
+  const starFill =
+    movie.vote_average >= 7
+      ? "#facc15"
+      : movie.vote_average >= 5
+      ? "#f97316"
+      : "#f43f5e";
+
+  const starColor = starFill === "#facc15" ? "#d5ae15" : starFill;
 
   return (
     <main className={styles.page}>
@@ -90,7 +97,9 @@ export default async function MoviePage({
               <span>({new Date(movie.release_date).getFullYear()})</span>
             </h1>
             <p className={styles.meta}>
-              {movie.runtime} min • ⭐️ {movie.vote_average.toFixed(1)}
+              {movie.runtime} min •{" "}
+              <Star size={23} fill={starFill} color={starColor} />{" "}
+              {movie.vote_average.toFixed(1)}
             </p>
           </header>
           <p className={styles.overview}>{movie.overview}</p>

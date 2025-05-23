@@ -88,7 +88,7 @@ export default function MovieCard({
         <div className={styles.meta}>
           <span className={styles.year}>{year}</span>
           <span className={styles.rating}>
-            <Star size={14} fill={starColor} color={starColor} />
+            <Star size={19} fill={starColor} color={starColor} />
             {rating}
             {/* <StarFill value={vote_average} />
             <span className={styles.ratingValue}>{rating}</span> */}

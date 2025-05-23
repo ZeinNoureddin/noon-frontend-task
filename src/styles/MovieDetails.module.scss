@@ -52,12 +52,16 @@
     font-size: 2rem;
   }
   .meta {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
   .overview {
     line-height: 1.5;
     margin-bottom: 1rem;
+    font-size: 1.1rem;
   }
   .genres span {
     display: inline-block;
