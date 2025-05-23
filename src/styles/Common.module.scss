@@ -10,26 +10,39 @@
 .glassCard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   width: 90%;
   max-width: 1200px;
   min-height: 70vh;
 }
 
 .films {
-  width: 85%;
-  padding: 2rem 3rem;
+  width: 100%;
+  padding: 2rem 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 2.5rem;
   overflow-y: auto;
+
+  // @media (max-width: 1024px) {
+  //   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  //   gap: 2rem;
+  //   padding: 1.5rem;
+  // }
+
+  /* ───── phone ───── */
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+  }
 }
 
 .pageHeader {
   text-align: start;
   margin-top: 2rem;
   font-size: 1.4rem;
-  width: 85%;
+  width: 100%;
   padding-left: 3rem;
 }

@@ -21,3 +21,13 @@
   align-items: center;
   padding: 3rem;
 }
+
+.homePageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  min-height: 70vh;
+}

@@ -12,7 +12,10 @@ export default function Home() {
 
   return (
     <main className={styles.pageWrapper}>
-      <section aria-labelledby="home-heading" className={styles.glassCard}>
+      <section
+        aria-labelledby="home-heading"
+        className={styles.homePageWrapper}
+      >
         <h1 className={styles.homeHeader}>Find your favourite films</h1>
         <SearchBar />
       </section>
