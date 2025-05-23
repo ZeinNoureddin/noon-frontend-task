@@ -114,40 +114,6 @@
   }
 }
 
-/* delete or comment out your “max-width:768px” block */
-
-@media (max-width: 1024px) and (min-width: 768px) {
-  // .infoCard {
-  //   flex-direction: row; /* Change layout to row for tablet views */
-  //   align-items: flex-start; /* Align items at the top */
-  //   margin: -6rem auto 2rem;
-  // }
-
-  // .left {
-  //   flex: 0 0 40%; /* Keep the poster on the left */
-  //   width: auto; /* Ensure it doesn't stretch */
-  //   padding: 1.5rem;
-
-  //   .poster {
-  //     width: 100%; /* Full width of the left container */
-  //     max-width: 180px; /* Limit the poster width */
-  //     margin: 0; /* Remove centering margin */
-  //     aspect-ratio: 2/3; /* Maintain aspect ratio */
-  //   }
-  // }
-
-  // .right {
-  //   flex: 1; /* Take the remaining space */
-  //   width: auto; /* Ensure it doesn't stretch */
-  //   padding: 1.5rem;
-  //   margin-top: 0; /* Remove top margin */
-  // }
-  .left {
-    // display: flex;
-    // flex-direction: row;
-  }
-}
-
 @media (max-width: 1024px) {
   /* ← everything in here now applies to both phones & tablets */
   .backdrop {
@@ -162,7 +128,7 @@
   .left {
     flex: none;
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
 
     .poster {
       width: 40%; /* 40% of the infoCard’s width */

@@ -63,7 +63,9 @@ export default async function MoviePage({
     <main className={styles.page}>
       <BackdropHeader backdropPath={movie.backdrop_path} />
       <article className={styles.infoCard}>
-        <InfoCard movie={movie} starFill={starFill} starColor={starColor} />
+        <div className={styles.left}>
+          <InfoCard movie={movie} starFill={starFill} starColor={starColor} />
+        </div>
         <div className={styles.right}>
           <FavoriteButton
             movie={{
