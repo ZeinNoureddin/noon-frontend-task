@@ -16,10 +16,10 @@ export function FavoriteButton({ movie }: { movie: MovieSummary }) {
       isFav ? remove(movie.id) : add(movie);
     } catch (error) {
       console.error(
-        `Failed to update favorites for movie "${movie.title}":`,
+        `Failed to update favourites for movie "${movie.title}":`,
         error
       );
-      alert("An error occurred while updating favorites. Please try again.");
+      alert("An error occurred while updating favourites. Please try again.");
     }
   };
 
@@ -27,7 +27,7 @@ export function FavoriteButton({ movie }: { movie: MovieSummary }) {
     <button
       className={styles.button}
       onClick={toggle}
-      aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
+      aria-label={isFav ? "Remove from favourites" : "Add to favourites"}
       type="button"
       onKeyDown={(e) => {
         if (e.key === "Enter") {
@@ -44,7 +44,7 @@ export function FavoriteButton({ movie }: { movie: MovieSummary }) {
         aria-hidden="true"
       />
       <span style={{ marginLeft: 8 }}>
-        {isFav ? "Remove from favorites" : "Add to favorites"}
+        {isFav ? "Remove from favourites" : "Add to favourites"}
       </span>
     </button>
   );

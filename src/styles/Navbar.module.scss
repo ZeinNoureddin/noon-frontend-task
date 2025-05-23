@@ -2,18 +2,20 @@
 
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
 
   /* give it the same vertical padding you had before */
-//   padding: 0.75rem 0; 
-//   background: var(--glass-bg);
-//   background: rgba(255, 255, 255, 0.6);
+  //   padding: 0.75rem 0;
+  //   background: var(--glass-bg);
+  //   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(30px);
-    // background: #fecba4; 
+  // background: #fecba4;
   // mix-blend-mode: difference;
 
-  padding: 1.2rem 0 1.2rem 0;  
+  padding: 1.2rem 0 1.2rem 0;
   background: transparent;
 }
 
@@ -25,15 +27,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%; 
+  height: 100%;
 }
-
 
 /* Left */
 .brand a {
   font-size: 2rem;
   font-weight: bold;
-  color: #34346b; 
   text-decoration: none;
 }
 
@@ -47,7 +47,6 @@
 /* Right */
 .links a {
   margin-left: 1.5rem;
-  color: #34346b; 
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;

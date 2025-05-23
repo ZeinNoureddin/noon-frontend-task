@@ -122,7 +122,7 @@ export default async function MoviePage({
                       alt={c.name}
                       width={100}
                       height={150}
-                      style={{ objectFit: "cover" }}
+                      style={{ objectFit: "cover", borderRadius: "0.09rem" }}
                     />
                   ) : (
                     <div className={styles.noImage}>No Image</div>

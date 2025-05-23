@@ -1,6 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --default-font-color: #34346b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,23 +18,28 @@
 html,
 body {
   font-family: var(--font-geist-sans), sans-serif;
-  
+
   max-width: 100vw;
   overflow-x: hidden;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, button, input {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+input {
   font-family: inherit;
 }
 
 body {
-  color: var(--foreground);
+  color: var(--default-font-color);
   /* background: var(--background); */
-  background: linear-gradient(
-    135deg,
-    #fecba4 0%,
-    #bcbcf3 100%
-  );
+  background: linear-gradient(135deg, #fecba4 0%, #bcbcf3 100%);
   min-height: 100vh;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -58,5 +64,5 @@ a {
 }
 
 .mainContent {
-  padding-top: 4rem;  /* same as navbar height */
+  padding-top: 4rem; /* same as navbar height */
 }
