@@ -14,7 +14,7 @@ export default function FavoritesPage() {
   const styles = { ...commonStyles };
 
   return (
-    <div className={styles.pageWrapper}>
+    <main className={styles.pageWrapper}>
       <div className={styles.glassCard}>
         <h1 className={styles.siteTitle}>Your Favorites</h1>
         {favs.length === 0 ? (
@@ -45,6 +45,6 @@ export default function FavoritesPage() {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 }

@@ -59,7 +59,7 @@ export default async function MoviePage({
   }
 
   return (
-    <div className={styles.page}>
+    <main className={styles.page}>
       {/* 1) Backdrop header */}
       {movie.backdrop_path && (
         <div
@@ -72,7 +72,7 @@ export default async function MoviePage({
       )}
 
       {/* 2) Info card */}
-      <div className={styles.infoCard}>
+      <article className={styles.infoCard}>
         <div className={styles.left}>
           {movie.poster_path && (
             <div className={styles.poster}>
@@ -84,13 +84,15 @@ export default async function MoviePage({
               />
             </div>
           )}
-          <h1>
-            {movie.title}{" "}
-            <span>({new Date(movie.release_date).getFullYear()})</span>
-          </h1>
-          <p className={styles.meta}>
-            {movie.runtime} min • ⭐️ {movie.vote_average.toFixed(1)}
-          </p>
+          <header>
+            <h1>
+              {movie.title}{" "}
+              <span>({new Date(movie.release_date).getFullYear()})</span>
+            </h1>
+            <p className={styles.meta}>
+              {movie.runtime} min • ⭐️ {movie.vote_average.toFixed(1)}
+            </p>
+          </header>
           <p className={styles.overview}>{movie.overview}</p>
           <div className={styles.genres}>
             {movie.genres.map((g) => (
@@ -109,28 +111,30 @@ export default async function MoviePage({
               vote_average: movie.vote_average,
             }}
           />
-          <h2>Cast</h2>
-          <div className={styles.castGrid}>
-            {movie.credits.cast.slice(0, 12).map((c) => (
-              <div key={c.id} className={styles.castCard}>
-                {c.profile_path ? (
-                  <Image
-                    src={`https://image.tmdb.org/t/p/w185${c.profile_path}`}
-                    alt={c.name}
-                    width={100}
-                    height={150}
-                    style={{ objectFit: "cover" }}
-                  />
-                ) : (
-                  <div className={styles.noImage}>No Image</div>
-                )}
-                <p className={styles.castName}>{c.name}</p>
-                <p className={styles.castChar}>{c.character}</p>
-              </div>
-            ))}
-          </div>
+          <section aria-labelledby="cast-heading">
+            <h2 id="cast-heading">Cast</h2>
+            <div className={styles.castGrid}>
+              {movie.credits.cast.slice(0, 12).map((c) => (
+                <div key={c.id} className={styles.castCard}>
+                  {c.profile_path ? (
+                    <Image
+                      src={`https://image.tmdb.org/t/p/w185${c.profile_path}`}
+                      alt={c.name}
+                      width={100}
+                      height={150}
+                      style={{ objectFit: "cover" }}
+                    />
+                  ) : (
+                    <div className={styles.noImage}>No Image</div>
+                  )}
+                  <p className={styles.castName}>{c.name}</p>
+                  <p className={styles.castChar}>{c.character}</p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
   );
 }
