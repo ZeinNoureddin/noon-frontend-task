@@ -37,6 +37,7 @@ export const useFavoritesStore = create<FavoritesState>((set, get) => ({
         return state;
       }
       const next = [movie, ...state.favorites];
+      // let next = [...state.favorites, movie];
       localStorage.setItem("favorites", JSON.stringify(next));
       return { favorites: next };
     });

@@ -24,7 +24,6 @@ export default function MovieCard({
   vote_average,
 }: Props) {
   const year = new Date(release_date).getFullYear();
-  // const rating = vote_average.toFixed(1);
   const rating =
     typeof vote_average === "number" && !Number.isNaN(vote_average)
       ? vote_average.toFixed(1)
