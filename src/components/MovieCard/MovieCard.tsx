@@ -61,7 +61,6 @@ export default function MovieCard({
   return (
     <Link href={`/movie/${id}`} className={styles.cardLink}>
       <div className={styles.movieCard}>
-        {/* <div className={styles.posterWrapper}> */}
         <div className={`${styles.posterWrapper} ${styles.wrapper}`}>
           {poster_path ? (
             <Image
@@ -76,7 +75,7 @@ export default function MovieCard({
           <div
             className={styles.heartIcon}
             onClick={(e) => {
-              e.preventDefault(); // prevent navigation
+              e.preventDefault();
               toggleFavorite();
             }}
           >

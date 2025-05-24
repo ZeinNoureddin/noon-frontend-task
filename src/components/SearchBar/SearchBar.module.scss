@@ -1,18 +1,16 @@
 .searchForm {
   width: 100%;
-  max-width: 500px; /* adjust as you like */
+  max-width: 500px;
 }
 
 .searchForm.small {
-  max-width: 300px; /* shrink it for the navbar */
+  max-width: 300px;
   .input {
     padding: 0.25rem 0.75rem;
     font-size: 0.9rem;
-    // color: white;
   }
   .inputGroup {
     padding: 0.25rem 0.75rem;
-    // color: white;
   }
 }
 

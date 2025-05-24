@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import axios from "axios";
 import styles from "./PopularRibbon.module.scss";
 
 interface Movie {
@@ -16,11 +17,17 @@ export default function PopularRibbon() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&language=en-US&page=1`
+        const res = await axios.get(
+          `https://api.themoviedb.org/3/movie/popular`,
+          {
+            params: {
+              api_key: process.env.NEXT_PUBLIC_TMDB_API_KEY,
+              language: "en-US",
+              page: 1,
+            },
+          }
         );
-        const json = await res.json();
-        setMovies(json.results || []);
+        setMovies(res.data.results || []);
       } catch (e) {
         console.error("Failed to fetch popular:", e);
       }

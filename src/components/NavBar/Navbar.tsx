@@ -35,20 +35,20 @@ export default function Navbar() {
           <Link href="/">The Film Fanatic</Link>
         </div>
 
-        {/* DESKTOP SEARCH */}
+        {/* desktop search */}
         {pathname !== "/" && (
           <div className={`${styles.center} ${styles.searchDesktop}`}>
             <SearchBar small />
           </div>
         )}
 
-        {/* DESKTOP LINKS */}
+        {/* desktop links */}
         <div className={styles.links}>
           <Link href="/">Home</Link>
           <Link href="/favourites">Favourites</Link>
         </div>
 
-        {/* MOBILE CONTROLS */}
+        {/* mobile controls */}
         <div className={styles.mobileIcons}>
           <button
             aria-label="Toggle search"
@@ -66,14 +66,14 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-      {/* MOBILE SEARCH BAR */}
+      {/* mobile search bar */}
       {searchOpen && (
         <div className={styles.mobileSearch}>
           <SearchBar />
         </div>
       )}
 
-      {/* MOBILE MENU */}
+      {/* mobile menu */}
       {menuOpen && (
         <div className={`${styles.mobileMenu} ${styles.links}`}>
           <Link href="/" onClick={() => setMenuOpen(false)}>
