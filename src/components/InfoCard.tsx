@@ -4,6 +4,7 @@ import styles from "@/styles/MovieDetails.module.scss";
 
 export function InfoCard({
   movie,
+  director,
   starFill,
   starColor,
 }: {
@@ -16,6 +17,7 @@ export function InfoCard({
     overview: string;
     genres: { id: number; name: string }[];
   };
+  director?: string;
   starFill: string;
   starColor: string;
 }) {
@@ -33,13 +35,20 @@ export function InfoCard({
       )}
       <header>
         <h1>
-          {movie.title} <span>({new Date(movie.release_date).getFullYear()})</span>
+          {movie.title}{" "}
+          <span>({new Date(movie.release_date).getFullYear()})</span>
         </h1>
         <p className={styles.meta}>
-          {movie.runtime} min • <Star size={23} fill={starFill} color={starColor} />{" "}
+          {movie.runtime} min •{" "}
+          <Star size={23} fill={starFill} color={starColor} />{" "}
           {movie.vote_average.toFixed(1)}
         </p>
       </header>
+      {director && (
+        <div className={styles.director}>
+          <p>Directed by: {director}</p>
+        </div>
+      )}
       <p className={styles.overview}>{movie.overview}</p>
       <div className={styles.genres}>
         {movie.genres.map((g) => (

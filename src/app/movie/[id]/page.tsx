@@ -23,6 +23,11 @@ type MovieDetails = {
       character: string;
       profile_path: string | null;
     }>;
+    crew: Array<{
+      id: number;
+      name: string;
+      job: string;
+    }>;
   };
 };
 
@@ -63,6 +68,10 @@ export default async function MoviePage({
 
   const starColor = starFill === "#facc15" ? "#d5ae15" : starFill;
 
+  const director = movie.credits.crew.find(
+    (member) => member.job === "Director"
+  );
+
   return (
     <main className={styles.page}>
       {movie.backdrop_path ? (
@@ -72,7 +81,7 @@ export default async function MoviePage({
       )}
       <article className={styles.infoCard}>
         <div className={styles.left}>
-          <InfoCard movie={movie} starFill={starFill} starColor={starColor} />
+          <InfoCard movie={movie} director={director?.name} starFill={starFill} starColor={starColor} />
         </div>
         <div className={styles.right}>
           <FavoriteButton
