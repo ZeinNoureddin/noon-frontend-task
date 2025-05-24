@@ -1,3 +1,4 @@
+import axios from "axios";
 import { BackdropHeader } from "@/components/BackdropHeader";
 import { InfoCard } from "@/components/InfoCard";
 import { CastSection } from "@/components/CastSection";
@@ -26,15 +27,19 @@ type MovieDetails = {
 };
 
 async function fetchMovieDetails(id: string): Promise<MovieDetails> {
-  await new Promise((res) => setTimeout(res, 2000));
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}` +
-      `?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}` +
-      `&append_to_response=credits`,
-    { next: { revalidate: 3600 } }
-  );
-  if (!res.ok) throw new Error("Movie not found");
-  return res.json();
+  // await new Promise((res) => setTimeout(res, 2000)); // Simulate delay
+  try {
+    const res = await axios.get(`https://api.themoviedb.org/3/movie/${id}`, {
+      params: {
+        api_key: process.env.NEXT_PUBLIC_TMDB_API_KEY,
+        append_to_response: "credits",
+      },
+    });
+    return res.data;
+  } catch (error) {
+    console.error(`Failed to load movie ${id}:`, error);
+    throw error;
+  }
 }
 
 export default async function MoviePage({
@@ -45,8 +50,8 @@ export default async function MoviePage({
   let movie;
   try {
     movie = await fetchMovieDetails(id);
-  } catch {
-    return notFound();
+  } catch (error: any) {
+    notFound();
   }
 
   const starFill =

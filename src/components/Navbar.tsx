@@ -21,8 +21,15 @@ export default function Navbar() {
     if (menuOpen) setMenuOpen(false);
   };
 
+  const addGlassEffect = pathname != "/";
+
   return (
-    <nav className={styles.navbar}>
+    <nav
+      className={styles.navbar}
+      style={{
+        background: addGlassEffect ? "var(--glass-bg)" : "transparent",
+      }}
+    >
       <div className={styles.navContainer}>
         <div className={styles.brand}>
           <Link href="/">The Film Fanatic</Link>

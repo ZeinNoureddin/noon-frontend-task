@@ -1,5 +1,6 @@
 // 'use client';
 import { create } from "zustand";
+import axios from "axios";
 
 interface Movie {
   id: number;
@@ -32,14 +33,13 @@ export const useSearchStore = create<SearchState>((set, get) => ({
 
     set({ loading: true, error: null });
     try {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${
-          process.env.NEXT_PUBLIC_TMDB_API_KEY
-        }&query=${encodeURIComponent(query)}`
-      );
-      if (!res.ok) throw new Error("Failed to fetch results");
-      const data = await res.json();
-      set({ results: data.results || [], loading: false });
+      const res = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
+        params: {
+          api_key: process.env.NEXT_PUBLIC_TMDB_API_KEY,
+          query: query,
+        },
+      });
+      set({ results: res.data.results || [], loading: false });
     } catch (err) {
       console.error(err);
       set({ results: [], loading: false, error: "Failed to fetch results" });
