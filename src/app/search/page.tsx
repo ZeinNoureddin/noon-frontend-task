@@ -25,7 +25,6 @@ export default function SearchResultsPage() {
         {loading ? (
           <div className={styles.loadingContainer}>
             <div className={styles.spinner} />
-            <span>Loading…</span>
           </div>
         ) : error ? (
           <p className={styles.errorMessage}>{error}</p>

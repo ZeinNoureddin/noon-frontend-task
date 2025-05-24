@@ -1,22 +1,30 @@
 "use client";
 
+import { useEffect } from "react";
 import commonStyles from "@/styles/Common.module.scss";
+import loadingStyles from "@/styles/Loading.module.scss";
 import { useFavoritesStore } from "@/stores/useFavoritesStore";
 import { lazy, Suspense } from "react";
 
-// Lazy load the MovieCard component
 const MovieCard = lazy(() => import("@/components/MovieCard"));
 
 export default function FavoritesPage() {
-  const favs = useFavoritesStore((s) => s.favorites);
+  const { favorites: favs, loading, init } = useFavoritesStore();
+  const styles = { ...commonStyles, ...loadingStyles };
 
-  const styles = { ...commonStyles };
+  useEffect(() => {
+    init();
+  }, [init]);
 
   return (
     <main className={styles.pageWrapper}>
       <div className={styles.glassCard}>
         <h1 className={styles.pageHeader}>Your Favourites</h1>
-        {favs.length === 0 ? (
+        {loading ? (
+          <div className={styles.loadingContainer}>
+            <div className={styles.spinner} />
+          </div>
+        ) : favs.length === 0 ? (
           <p className={styles.noResults}>
             You haven’t added any favorites yet.
           </p>
@@ -24,9 +32,8 @@ export default function FavoritesPage() {
           <div className={styles.films}>
             <Suspense
               fallback={
-                <div className={styles.loadingContainer}>
+                <div className={styles.spinnerOverlay}>
                   <div className={styles.spinner} />
-                  <span>Loading favorites...</span>
                 </div>
               }
             >

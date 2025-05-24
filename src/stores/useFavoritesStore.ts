@@ -1,5 +1,4 @@
-// src/stores/useFavoritesStore.ts
-import { create } from 'zustand';
+import { create } from "zustand";
 
 export type MovieSummary = {
   id: number;
@@ -11,30 +10,41 @@ export type MovieSummary = {
 
 interface FavoritesState {
   favorites: MovieSummary[];
+  loading: boolean;
+  init: () => void;
   addFavorite: (m: MovieSummary) => void;
   removeFavorite: (id: number) => void;
 }
 
 const readStorage = (): MovieSummary[] => {
-  if (typeof window === 'undefined') return [];
-  const raw = localStorage.getItem('favorites');
+  if (typeof window === "undefined") return [];
+  const raw = localStorage.getItem("favorites");
   return raw ? JSON.parse(raw) : [];
 };
 
 export const useFavoritesStore = create<FavoritesState>((set, get) => ({
-  favorites: readStorage(),
+  favorites: [],
+  loading: true,
+
+  init: () => {
+    const data = readStorage();
+    set({ favorites: data, loading: false });
+  },
+
   addFavorite: (movie) => {
     set((state) => {
-      if (state.favorites.find((f) => f.id === movie.id)) return state;
+      if (state.favorites.find((f) => f.id === movie.id)) {
+        return state;
+      }
       const next = [...state.favorites, movie];
-      localStorage.setItem('favorites', JSON.stringify(next));
+      localStorage.setItem("favorites", JSON.stringify(next));
       return { favorites: next };
     });
   },
   removeFavorite: (id) => {
     set((state) => {
       const next = state.favorites.filter((f) => f.id !== id);
-      localStorage.setItem('favorites', JSON.stringify(next));
+      localStorage.setItem("favorites", JSON.stringify(next));
       return { favorites: next };
     });
   },
