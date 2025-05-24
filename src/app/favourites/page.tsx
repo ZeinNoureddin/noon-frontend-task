@@ -25,9 +25,9 @@ export default function FavoritesPage() {
             <div className={styles.spinner} />
           </div>
         ) : favs.length === 0 ? (
-          <p className={styles.noResults}>
-            You haven’t added any favorites yet.
-          </p>
+          <div className={styles.noResults}>
+            <p>You haven’t added any favourites yet.</p>
+          </div>
         ) : (
           <div className={styles.films}>
             <Suspense

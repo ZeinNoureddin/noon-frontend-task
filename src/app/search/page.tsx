@@ -29,7 +29,9 @@ export default function SearchResultsPage() {
         ) : error ? (
           <p className={styles.errorMessage}>{error}</p>
         ) : results.length === 0 ? (
-          <p className={styles.noResults}>No films found.</p>
+          <div className={styles.noResults}>
+            <p>No films found.</p>
+          </div>
         ) : (
           <>
             <h1 className={styles.pageHeader}>Results for “{query}”</h1>

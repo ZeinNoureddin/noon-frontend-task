@@ -43,3 +43,12 @@
   width: 100%;
   padding-left: 3rem;
 }
+
+.noResults {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-style: italic;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
