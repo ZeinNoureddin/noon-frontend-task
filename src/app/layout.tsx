@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from '@/components/Navbar';
+import Navbar from "@/components/NavBar/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'TheFilmFanatic',
-  description: 'Search and favourite your films',
+  title: "TheFilmFanatic",
+  description: "Search and favourite your films",
 };
-
 
 export default function RootLayout({
   children,

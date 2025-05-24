@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import styles from "../styles/SearchBar.module.scss";
+import styles from "./SearchBar.module.scss";
 
 export default function SearchBar({ small = false }: { small?: boolean }) {
   const router = useRouter();

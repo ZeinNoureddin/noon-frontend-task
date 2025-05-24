@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Star } from "lucide-react";
-import styles from "@/styles/MovieDetails.module.scss";
+import styles from "./MovieDetails.module.scss";
 
 export function InfoCard({
   movie,

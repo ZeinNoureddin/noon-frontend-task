@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import SearchBar from "./SearchBar";
-import styles from "../styles/Navbar.module.scss";
+import SearchBar from "../SearchBar/SearchBar";
+import styles from "./Navbar.module.scss";
 import { Menu, X, Search } from "lucide-react";
 
 export default function Navbar() {

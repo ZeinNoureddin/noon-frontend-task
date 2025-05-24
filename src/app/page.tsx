@@ -1,7 +1,7 @@
 import homeStyles from "@/styles/Home.module.scss";
 import commonStyles from "@/styles/Common.module.scss";
-import SearchBar from "@/components/SearchBar";
-import PopularRibbon from "@/components/PopularRibbon";
+import SearchBar from "@/components/SearchBar/SearchBar";
+import PopularRibbon from "@/components/PopularRibbon/PopularRibbon";
 
 export default function Home() {
   const styles = { ...commonStyles, ...homeStyles };

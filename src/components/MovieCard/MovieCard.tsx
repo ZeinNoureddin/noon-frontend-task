@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/styles/MovieCard.module.scss";
-import animateHeartStyles from "../styles/FavouriteButton.module.scss";
+import animateHeartStyles from "../FavouriteButton/FavouriteButton.module.scss";
+import styles from "./MovieCard.module.scss";
 import { Star, Heart } from "lucide-react";
 import { useFavoritesStore, MovieSummary } from "@/stores/useFavoritesStore";
 import { useState } from "react";
@@ -54,7 +54,6 @@ export default function MovieCard({
       alert("An error occurred while updating favorites. Please try again.");
     }
   };
-  console.log(`${title} isFav:`, isFav);
 
   const starColor =
     vote_average >= 7 ? "#facc15" : vote_average >= 5 ? "#f97316" : "#f43f5e";
@@ -99,8 +98,6 @@ export default function MovieCard({
           <span className={styles.rating}>
             <Star size={19} fill={starColor} color={starColor} />
             {rating}
-            {/* <StarFill value={vote_average} />
-            <span className={styles.ratingValue}>{rating}</span> */}
           </span>
         </div>
       </div>

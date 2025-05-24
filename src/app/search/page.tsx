@@ -3,8 +3,8 @@
 import { useSearchStore } from "@/stores/useSearchStore";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-import MovieCard from "@/components/MovieCard";
-import searchStyles from "@/styles/Search.module.scss";
+import MovieCard from "@/components/MovieCard/MovieCard";
+import searchStyles from "./Search.module.scss";
 import commonStyles from "@/styles/Common.module.scss";
 
 export default function SearchResultsPage() {

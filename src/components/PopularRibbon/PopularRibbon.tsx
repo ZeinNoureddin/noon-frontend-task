@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import styles from "../styles/PopularRibbon.module.scss";
+import styles from "./PopularRibbon.module.scss";
 
 interface Movie {
   id: number;

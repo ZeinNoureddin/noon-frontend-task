@@ -1,9 +1,9 @@
 import axios from "axios";
-import { BackdropHeader } from "@/components/BackdropHeader";
-import { InfoCard } from "@/components/InfoCard";
-import { CastSection } from "@/components/CastSection";
-import { FavoriteButton } from "@/components/FavouriteButton";
-import styles from "@/styles/MovieDetails.module.scss";
+import { BackdropHeader } from "@/components/MovieDetails/BackdropHeader";
+import { InfoCard } from "@/components/MovieDetails/InfoCard";
+import { CastSection } from "@/components/MovieDetails/CastSection";
+import { FavoriteButton } from "@/components/FavouriteButton/FavouriteButton";
+import styles from "../../../components/MovieDetails/MovieDetails.module.scss";
 import { notFound } from "next/navigation";
 
 type MovieDetails = {
@@ -81,7 +81,12 @@ export default async function MoviePage({
       )}
       <article className={styles.infoCard}>
         <div className={styles.left}>
-          <InfoCard movie={movie} director={director?.name} starFill={starFill} starColor={starColor} />
+          <InfoCard
+            movie={movie}
+            director={director?.name}
+            starFill={starFill}
+            starColor={starColor}
+          />
         </div>
         <div className={styles.right}>
           <FavoriteButton

@@ -6,7 +6,7 @@ import loadingStyles from "@/styles/Loading.module.scss";
 import { useFavoritesStore } from "@/stores/useFavoritesStore";
 import { lazy, Suspense } from "react";
 
-const MovieCard = lazy(() => import("@/components/MovieCard"));
+const MovieCard = lazy(() => import("@/components/MovieCard/MovieCard"));
 
 export default function FavoritesPage() {
   const { favorites: favs, loading, init } = useFavoritesStore();

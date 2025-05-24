@@ -1,7 +1,7 @@
 "use client";
 
 import { MovieSummary, useFavoritesStore } from "@/stores/useFavoritesStore";
-import styles from "../styles/FavouriteButton.module.scss";
+import styles from "./FavouriteButton.module.scss";
 import { Heart } from "lucide-react";
 import { useState } from "react";
 

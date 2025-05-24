@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "@/styles/MovieDetails.module.scss";
+import styles from "./MovieDetails.module.scss";
 
 export function CastSection({ cast }: { cast: Array<{ id: number; name: string; character: string; profile_path: string | null }> }) {
   return (
