@@ -36,7 +36,7 @@ export const useFavoritesStore = create<FavoritesState>((set, get) => ({
       if (state.favorites.find((f) => f.id === movie.id)) {
         return state;
       }
-      const next = [...state.favorites, movie];
+      const next = [movie, ...state.favorites];
       localStorage.setItem("favorites", JSON.stringify(next));
       return { favorites: next };
     });

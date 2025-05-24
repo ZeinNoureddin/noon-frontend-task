@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'TheFilmFanatic',
-  description: 'Search and favorite your films',
+  description: 'Search and favourite your films',
 };
 
 
