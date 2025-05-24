@@ -1,4 +1,3 @@
-// app/movie/[id]/page.tsx
 import { BackdropHeader } from "@/components/BackdropHeader";
 import { InfoCard } from "@/components/InfoCard";
 import { CastSection } from "@/components/CastSection";

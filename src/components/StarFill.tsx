@@ -1,4 +1,3 @@
-// components/StarFill.tsx
 import styles from "@/styles/StarFill.module.scss";
 
 interface Props {

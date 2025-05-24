@@ -1,4 +1,3 @@
-// components/MovieCard.tsx
 "use client";
 
 import Image from "next/image";
