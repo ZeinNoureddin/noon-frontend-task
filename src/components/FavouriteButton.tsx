@@ -3,6 +3,7 @@
 import { MovieSummary, useFavoritesStore } from "@/stores/useFavoritesStore";
 import styles from "../styles/FavouriteButton.module.scss";
 import { Heart } from "lucide-react";
+import { useState } from "react";
 
 export function FavoriteButton({ movie }: { movie: MovieSummary }) {
   const favs = useFavoritesStore((s) => s.favorites);
@@ -10,8 +11,14 @@ export function FavoriteButton({ movie }: { movie: MovieSummary }) {
   const remove = useFavoritesStore((s) => s.removeFavorite);
   const isFav = favs.some((f) => f.id === movie.id);
 
+  const [animate, setAnimate] = useState(false);
+
   const toggle = () => {
     try {
+      if (!isFav) {
+        setAnimate(true);
+        setTimeout(() => setAnimate(false), 300);
+      }
       isFav ? remove(movie.id) : add(movie);
     } catch (error) {
       console.error(
@@ -41,6 +48,7 @@ export function FavoriteButton({ movie }: { movie: MovieSummary }) {
         style={{ fill: isFav ? "#e25555" : "none" }}
         color={isFav ? "#e25555" : "#34346b"}
         aria-hidden="true"
+        className={`${styles.heart} ${animate ? styles.animate : ""}`}
       />
       <span style={{ marginLeft: 8 }}>
         {isFav ? "Remove from favourites" : "Add to favourites"}

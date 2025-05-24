@@ -3,8 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/MovieCard.module.scss";
+import animateHeartStyles from "../styles/FavouriteButton.module.scss";
 import { Star, Heart } from "lucide-react";
 import { useFavoritesStore, MovieSummary } from "@/stores/useFavoritesStore";
+import { useState } from "react";
 
 interface Props {
   id: number;
@@ -28,6 +30,8 @@ export default function MovieCard({
       ? vote_average.toFixed(1)
       : "N/A";
 
+  const [animateHeart, setAnimateHeart] = useState(false);
+
   const isFav = useFavoritesStore((s) => s.favorites.some((f) => f.id === id));
   const addFav = useFavoritesStore((s) => s.addFavorite);
   const removeFav = useFavoritesStore((s) => s.removeFavorite);
@@ -41,6 +45,10 @@ export default function MovieCard({
         release_date,
         vote_average,
       };
+      if (!isFav) {
+        setAnimateHeart(true);
+        setTimeout(() => setAnimateHeart(false), 300);
+      }
       isFav ? removeFav(id) : addFav(movie);
     } catch (error) {
       console.error(`Failed to update favorites for movie "${title}":`, error);
@@ -80,6 +88,9 @@ export default function MovieCard({
               style={{ fill: isFav ? "#e25555" : "none" }}
               color={isFav ? "#e25555" : "#34346b"}
               aria-hidden="true"
+              className={`${animateHeartStyles.heart} ${
+                animateHeart ? animateHeartStyles.animate : ""
+              }`}
             />
           </div>
         </div>
