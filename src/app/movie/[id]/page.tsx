@@ -32,7 +32,7 @@ type MovieDetails = {
 };
 
 async function fetchMovieDetails(id: string): Promise<MovieDetails> {
-  // await new Promise((res) => setTimeout(res, 2000)); // Simulate delay
+  // await new Promise((res) => setTimeout(res, 2000)); // simulate delay
   try {
     const res = await axios.get(`https://api.themoviedb.org/3/movie/${id}`, {
       params: {
