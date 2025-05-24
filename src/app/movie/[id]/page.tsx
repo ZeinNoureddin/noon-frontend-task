@@ -65,7 +65,11 @@ export default async function MoviePage({
 
   return (
     <main className={styles.page}>
-      <BackdropHeader backdropPath={movie.backdrop_path} />
+      {movie.backdrop_path ? (
+        <BackdropHeader backdropPath={movie.backdrop_path} />
+      ) : (
+        <div className={styles.noBackdropSpacer} />
+      )}
       <article className={styles.infoCard}>
         <div className={styles.left}>
           <InfoCard movie={movie} starFill={starFill} starColor={starColor} />
