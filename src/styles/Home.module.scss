@@ -10,7 +10,6 @@
 }
 
 :root {
-  /* pastel gradient stops from your mockup */
   --gradient-start: #f6e3d8;
   --gradient-end: #e4d9f2;
   --glass-bg: rgba(255, 255, 255, 0.3);
@@ -34,4 +33,14 @@
   width: 90%;
   max-width: 1200px;
   min-height: 70vh;
+}
+
+.homeMainContainer {
+  min-height: 100vh;
+  // padding: 2rem;
+  margin-top: -2rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
 }
