@@ -45,6 +45,9 @@
   font-size: 1rem;
   background: transparent;
   color: #524873;
+  @media (max-width: 360px) {
+    font-size: 0.8rem;
+  }
 }
 
 .input::placeholder {

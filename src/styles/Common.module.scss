@@ -28,14 +28,8 @@
   gap: 2.5rem;
   overflow-y: auto;
 
-  // @media (max-width: 1024px) {
-  //   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  //   gap: 2rem;
-  //   padding: 1.5rem;
-  // }
-
   /* ───── phone ───── */
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 2.5rem;
     padding: 1rem;
