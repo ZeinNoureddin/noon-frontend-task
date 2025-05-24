@@ -33,7 +33,6 @@ export const useFavoritesStore = create<FavoritesState>((set, get) => ({
   },
 
   addFavorite: (movie) => {
-    if (get().loading) return;
     set((state) => {
       if (state.favorites.find((f) => f.id === movie.id)) {
         return state;
@@ -45,7 +44,6 @@ export const useFavoritesStore = create<FavoritesState>((set, get) => ({
     });
   },
   removeFavorite: (id) => {
-    if (get().loading) return;
     set((state) => {
       const next = state.favorites.filter((f) => f.id !== id);
       localStorage.setItem("favorites", JSON.stringify(next));
